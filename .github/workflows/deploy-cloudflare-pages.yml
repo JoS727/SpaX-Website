@@ -16,12 +16,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: >
-            pages deploy .
-            --project-name=${{ secrets.CLOUDFLARE_PAGES_PROJECT_NAME }}
-            --branch=main
+          projectName: ${{ secrets.CLOUDFLARE_PAGES_PROJECT_NAME }}
+          directory: .
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
