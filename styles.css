@@ -114,7 +114,8 @@ button {
 
 .hero__grid,
 .split-grid,
-.cta-panel {
+.cta-panel,
+.visit-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 2rem;
@@ -123,7 +124,8 @@ button {
 
 .hero__content h1,
 .section h2,
-.price-card h3 {
+.price-card h3,
+.visit-card h2 {
   font-family: Georgia, 'Times New Roman', serif;
   line-height: 0.98;
   letter-spacing: -0.04em;
@@ -155,7 +157,9 @@ button {
 .feature-list li,
 .contact-card__note,
 .price-card p,
-.testimonial-card p {
+.testimonial-card p,
+.visit-card p,
+.hours-list li {
   color: var(--muted);
   line-height: 1.8;
   font-size: 1rem;
@@ -206,7 +210,8 @@ button {
 .card,
 .contact-card,
 .price-card,
-.testimonial-card {
+.testimonial-card,
+.visit-card {
   border-radius: 30px;
   background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.68));
   border: 1px solid var(--border);
@@ -288,12 +293,14 @@ button {
 .card,
 .contact-card,
 .price-card,
-.testimonial-card {
+.testimonial-card,
+.visit-card {
   padding: 1.6rem;
 }
 
 .card h3,
-.price-card h3 {
+.price-card h3,
+.visit-card h2 {
   margin-top: 0;
   font-size: 1.3rem;
   color: #1f3038;
@@ -310,6 +317,11 @@ button {
   transform: translateY(-4px);
 }
 
+.pricing-note {
+  margin-top: 1.25rem;
+  color: var(--muted);
+}
+
 .testimonial-card {
   background: var(--surface-strong);
 }
@@ -320,8 +332,22 @@ button {
   font-weight: 700;
 }
 
-.split-grid--center {
-  align-items: start;
+.visit-grid {
+  align-items: stretch;
+}
+
+.hours-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.55rem 0;
+  border-top: 1px solid rgba(33, 49, 59, 0.08);
 }
 
 .contact-card {
@@ -341,7 +367,8 @@ button {
   .cards,
   .faq-grid,
   .pricing-grid,
-  .testimonial-grid {
+  .testimonial-grid,
+  .visit-grid {
     grid-template-columns: 1fr;
   }
 
@@ -411,5 +438,10 @@ button {
 
   .button {
     width: 100%;
+  }
+
+  .hours-list li {
+    flex-direction: column;
+    gap: 0.1rem;
   }
 }
