@@ -1,17 +1,17 @@
 :root {
-  --bg: #f6f0eb;
-  --bg-soft: #fffaf6;
-  --surface: rgba(255, 255, 255, 0.75);
-  --surface-strong: rgba(255, 255, 255, 0.92);
-  --text: #21313b;
-  --muted: #5f727c;
-  --accent: #c98b72;
-  --accent-dark: #8d5a47;
-  --border: rgba(33, 49, 59, 0.1);
-  --shadow: 0 24px 70px rgba(33, 49, 59, 0.12);
+  --cream: #fff7ee;
+  --blush: #f7c6d3;
+  --sunshine: #ffe494;
+  --ocean: #b7ddf2;
+  --coast: #111111;
+  --sand: #fffaf4;
+  --text: #1b1b1b;
+  --muted: #505050;
+  --shadow: 0 24px 70px rgba(17, 17, 17, 0.1);
+  --border: rgba(17, 17, 17, 0.08);
   font-family: Inter, system-ui, sans-serif;
   color: var(--text);
-  background: var(--bg);
+  background: var(--cream);
 }
 
 * {
@@ -25,8 +25,9 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at top left, rgba(201, 139, 114, 0.18), transparent 30%),
-    linear-gradient(180deg, #fffdfb 0%, #f6f0eb 100%);
+    radial-gradient(circle at top left, rgba(247, 198, 211, 0.45), transparent 28%),
+    radial-gradient(circle at top right, rgba(183, 221, 242, 0.35), transparent 24%),
+    linear-gradient(180deg, #fffdf8 0%, #fff7ee 100%);
   color: var(--text);
 }
 
@@ -53,8 +54,8 @@ button {
   top: 0;
   z-index: 20;
   backdrop-filter: blur(18px);
-  background: rgba(246, 240, 235, 0.82);
-  border-bottom: 1px solid rgba(33, 49, 59, 0.06);
+  background: rgba(255, 247, 238, 0.84);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.06);
 }
 
 .topbar__inner {
@@ -66,10 +67,28 @@ button {
 }
 
 .brand {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.brand__title {
   font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.65rem;
-  letter-spacing: 0.12em;
+  font-size: 1.7rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  line-height: 1;
+}
+
+.brand__title span {
+  color: #7dbddf;
+}
+
+.brand__subtitle {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: var(--muted);
 }
 
 .nav {
@@ -81,7 +100,7 @@ button {
 }
 
 .nav a:hover {
-  color: var(--text);
+  color: var(--coast);
 }
 
 .menu-toggle {
@@ -90,7 +109,7 @@ button {
   height: 46px;
   border: 1px solid var(--border);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.92);
   align-items: center;
   justify-content: center;
   flex-direction: column;
@@ -105,7 +124,7 @@ button {
   width: 18px;
   height: 2px;
   border-radius: 999px;
-  background: var(--text);
+  background: var(--coast);
 }
 
 .hero {
@@ -129,11 +148,11 @@ button {
   font-family: Georgia, 'Times New Roman', serif;
   line-height: 0.98;
   letter-spacing: -0.04em;
-  color: #1e2d36;
+  color: var(--coast);
 }
 
 .hero__content h1 {
-  font-size: clamp(3.3rem, 7vw, 6rem);
+  font-size: clamp(3.4rem, 7vw, 6.1rem);
   margin: 0;
   max-width: 10ch;
 }
@@ -144,11 +163,11 @@ button {
   text-transform: uppercase;
   letter-spacing: 0.24em;
   font-size: 0.72rem;
-  color: #f9ebe3;
+  color: #7dbddf;
 }
 
 .eyebrow--dark {
-  color: var(--accent-dark);
+  color: #f09cb8;
 }
 
 .hero__lede,
@@ -159,7 +178,8 @@ button {
 .price-card p,
 .testimonial-card p,
 .visit-card p,
-.hours-list li {
+.hours-list li,
+.pricing-note {
   color: var(--muted);
   line-height: 1.8;
   font-size: 1rem;
@@ -183,7 +203,7 @@ button {
   justify-content: center;
   border-radius: 999px;
   padding: 0.95rem 1.4rem;
-  font-weight: 600;
+  font-weight: 700;
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
@@ -193,13 +213,13 @@ button {
 
 .button--primary,
 .button--nav {
-  background: #1f3038;
+  background: var(--coast);
   color: white;
 }
 
 .button--ghost {
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.62);
 }
 
 .button--wide {
@@ -213,27 +233,94 @@ button {
 .testimonial-card,
 .visit-card {
   border-radius: 30px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.68));
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.74));
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
 }
 
 .hero-card {
-  min-height: 460px;
+  min-height: 480px;
   display: flex;
   align-items: flex-end;
   padding: 2rem;
   position: relative;
   overflow: hidden;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(255, 228, 148, 0.8), transparent 14%),
+    linear-gradient(180deg, rgba(183,221,242,0.35), rgba(247,198,211,0.18));
 }
 
-.hero-card::before {
+.hero-card__sun {
+  position: absolute;
+  top: 2.2rem;
+  right: 2.8rem;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--sunshine);
+}
+
+.hero-card__palm,
+.hero-card__wave {
+  position: absolute;
+}
+
+.hero-card__palm::before {
+  content: '✦';
+  color: transparent;
+}
+
+.palm-one,
+.palm-two {
+  width: 2px;
+  background: rgba(240, 156, 184, 0.9);
+  bottom: 7rem;
+}
+
+.palm-one {
+  left: 22%;
+  height: 140px;
+  transform: rotate(-8deg);
+}
+
+.palm-two {
+  right: 18%;
+  height: 110px;
+  transform: rotate(10deg);
+}
+
+.palm-one::after,
+.palm-two::after {
   content: '';
   position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at top, rgba(201, 139, 114, 0.35), transparent 30%),
-    linear-gradient(160deg, rgba(255,255,255,0.2), rgba(141,90,71,0.08));
+  top: -20px;
+  left: -24px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border-top: 10px solid rgba(240, 156, 184, 0.85);
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  transform: rotate(10deg);
+}
+
+.wave-one,
+.wave-two {
+  left: 12%;
+  width: 92px;
+  height: 12px;
+  border-top: 3px solid #7dbddf;
+  border-radius: 999px;
+}
+
+.wave-one {
+  bottom: 8.6rem;
+}
+
+.wave-two {
+  bottom: 7.4rem;
+  width: 74px;
 }
 
 .hero-card__panel {
@@ -242,8 +329,8 @@ button {
   width: 100%;
   padding: 1.4rem;
   border-radius: 24px;
-  background: rgba(255, 250, 246, 0.8);
-  border: 1px solid rgba(33, 49, 59, 0.08);
+  background: rgba(255, 250, 244, 0.92);
+  border: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .hero-card__label,
@@ -252,7 +339,7 @@ button {
   text-transform: uppercase;
   letter-spacing: 0.16em;
   font-size: 0.8rem;
-  color: var(--accent-dark);
+  color: #f09cb8;
 }
 
 .hero-card__panel ul,
@@ -266,11 +353,11 @@ button {
 }
 
 .section--soft {
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.4);
 }
 
 .section--accent {
-  background: linear-gradient(135deg, #24353f, #314955);
+  background: linear-gradient(135deg, #111111, #24343b);
   color: white;
 }
 
@@ -303,32 +390,28 @@ button {
 .visit-card h2 {
   margin-top: 0;
   font-size: 1.3rem;
-  color: #1f3038;
+  color: var(--coast);
 }
 
 .price-card__price {
   font-size: 1.15rem;
   font-weight: 700;
-  color: #1f3038;
+  color: var(--coast);
 }
 
 .price-card--featured {
-  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,250,246,0.82));
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255, 244, 233, 0.86));
   transform: translateY(-4px);
-}
-
-.pricing-note {
-  margin-top: 1.25rem;
-  color: var(--muted);
+  border-color: rgba(240, 156, 184, 0.35);
 }
 
 .testimonial-card {
-  background: var(--surface-strong);
+  background: var(--sand);
 }
 
 .testimonial-card footer {
   margin-top: 1rem;
-  color: var(--accent-dark);
+  color: #7dbddf;
   font-weight: 700;
 }
 
@@ -347,7 +430,7 @@ button {
   justify-content: space-between;
   gap: 1rem;
   padding: 0.55rem 0;
-  border-top: 1px solid rgba(33, 49, 59, 0.08);
+  border-top: 1px solid rgba(17, 17, 17, 0.08);
 }
 
 .contact-card {
@@ -390,7 +473,7 @@ button {
     gap: 0.35rem;
     padding: 0.75rem 0 0.25rem;
     margin-top: 0.15rem;
-    border-top: 1px solid rgba(33, 49, 59, 0.08);
+    border-top: 1px solid rgba(17, 17, 17, 0.08);
     order: 3;
   }
 
@@ -401,7 +484,7 @@ button {
   .nav a {
     width: 100%;
     padding: 0.95rem 0.2rem;
-    border-top: 1px solid rgba(33, 49, 59, 0.08);
+    border-top: 1px solid rgba(17, 17, 17, 0.08);
   }
 
   .button--nav {
@@ -409,7 +492,7 @@ button {
   }
 
   .hero-card {
-    min-height: 320px;
+    min-height: 340px;
   }
 }
 
@@ -429,7 +512,7 @@ button {
   }
 
   .hero__content h1 {
-    font-size: clamp(2.7rem, 14vw, 4.6rem);
+    font-size: clamp(2.8rem, 14vw, 4.8rem);
   }
 
   .hero__actions {
