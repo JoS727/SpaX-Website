@@ -2,6 +2,7 @@
   --bg: #f6f0eb;
   --bg-soft: #fffaf6;
   --surface: rgba(255, 255, 255, 0.75);
+  --surface-strong: rgba(255, 255, 255, 0.92);
   --text: #21313b;
   --muted: #5f727c;
   --accent: #c98b72;
@@ -72,6 +73,7 @@ a {
   align-items: center;
   gap: 1rem;
   color: var(--muted);
+  flex-wrap: wrap;
 }
 
 .nav a:hover {
@@ -92,7 +94,8 @@ a {
 }
 
 .hero__content h1,
-.section h2 {
+.section h2,
+.price-card h3 {
   font-family: Georgia, 'Times New Roman', serif;
   line-height: 0.98;
   letter-spacing: -0.04em;
@@ -122,7 +125,9 @@ a {
 .section p,
 .card p,
 .feature-list li,
-.contact-card__note {
+.contact-card__note,
+.price-card p,
+.testimonial-card p {
   color: var(--muted);
   line-height: 1.8;
   font-size: 1rem;
@@ -171,7 +176,9 @@ a {
 
 .hero-card,
 .card,
-.contact-card {
+.contact-card,
+.price-card,
+.testimonial-card {
   border-radius: 30px;
   background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.68));
   border: 1px solid var(--border);
@@ -206,7 +213,8 @@ a {
   border: 1px solid rgba(33, 49, 59, 0.08);
 }
 
-.hero-card__label {
+.hero-card__label,
+.price-card__label {
   margin: 0 0 1rem;
   text-transform: uppercase;
   letter-spacing: 0.16em;
@@ -240,7 +248,9 @@ a {
 }
 
 .cards,
-.faq-grid {
+.faq-grid,
+.pricing-grid,
+.testimonial-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.25rem;
@@ -248,14 +258,38 @@ a {
 }
 
 .card,
-.contact-card {
+.contact-card,
+.price-card,
+.testimonial-card {
   padding: 1.6rem;
 }
 
-.card h3 {
+.card h3,
+.price-card h3 {
   margin-top: 0;
   font-size: 1.3rem;
   color: #1f3038;
+}
+
+.price-card__price {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1f3038;
+}
+
+.price-card--featured {
+  background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(255,250,246,0.82));
+  transform: translateY(-4px);
+}
+
+.testimonial-card {
+  background: var(--surface-strong);
+}
+
+.testimonial-card footer {
+  margin-top: 1rem;
+  color: var(--accent-dark);
+  font-weight: 700;
 }
 
 .split-grid--center {
@@ -277,7 +311,9 @@ a {
   .split-grid,
   .cta-panel,
   .cards,
-  .faq-grid {
+  .faq-grid,
+  .pricing-grid,
+  .testimonial-grid {
     grid-template-columns: 1fr;
   }
 
