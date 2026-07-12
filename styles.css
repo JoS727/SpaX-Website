@@ -160,9 +160,8 @@ img {
   color: var(--coast);
 }
 
-.hero__content h1,
 .hero-photo-card__content h1 {
-  font-size: clamp(3.4rem, 7vw, 6.1rem);
+  font-size: clamp(3.4rem, 7vw, 6rem);
   margin: 0;
   max-width: 10ch;
 }
@@ -188,8 +187,7 @@ img {
 .price-card p,
 .visit-card p,
 .hours-list li,
-.pricing-note,
-.hero-photo-card__content .hero__lede {
+.pricing-note {
   color: var(--muted);
   line-height: 1.8;
   font-size: 1rem;
@@ -240,7 +238,8 @@ img {
 .contact-card,
 .price-card,
 .visit-card,
-.feature-photo-card {
+.feature-photo-card,
+.gallery-card {
   border-radius: 30px;
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
@@ -264,7 +263,7 @@ img {
 .hero-photo-card__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(255,247,238,0.96) 0%, rgba(255,247,238,0.75) 34%, rgba(255,247,238,0.15) 72%, rgba(255,247,238,0.08) 100%);
+  background: linear-gradient(90deg, rgba(255,247,238,0.96) 0%, rgba(255,247,238,0.78) 34%, rgba(255,247,238,0.18) 74%, rgba(255,247,238,0.06) 100%);
 }
 
 .hero-photo-card__content {
@@ -306,7 +305,6 @@ img {
 }
 
 .cards,
-.faq-grid,
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -355,6 +353,37 @@ img {
   padding-left: 1.2rem;
 }
 
+.gallery-section h2 {
+  margin-top: 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 0.8fr;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.gallery-card {
+  overflow: hidden;
+  background: white;
+}
+
+.gallery-card__image {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  object-fit: cover;
+}
+
+.gallery-card--wide {
+  grid-row: span 2;
+}
+
+.gallery-card--wide .gallery-card__image {
+  min-height: 100%;
+}
+
 .visit-grid {
   align-items: stretch;
 }
@@ -388,9 +417,9 @@ img {
   .split-grid,
   .cta-panel,
   .cards,
-  .faq-grid,
   .pricing-grid,
-  .visit-grid {
+  .visit-grid,
+  .gallery-grid {
     grid-template-columns: 1fr;
   }
 
@@ -442,6 +471,10 @@ img {
     padding: 2rem 1.4rem;
     max-width: 100%;
   }
+
+  .gallery-card--wide {
+    grid-row: auto;
+  }
 }
 
 @media (min-width: 901px) {
@@ -459,7 +492,6 @@ img {
     padding-top: 3rem;
   }
 
-  .hero__content h1,
   .hero-photo-card__content h1 {
     font-size: clamp(2.8rem, 14vw, 4.8rem);
   }
