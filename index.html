@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SPA X OB | Spa + Wellness in Ocean Beach</title>
-    <meta
-      name="description"
-      content="SPA X OB is an Ocean Beach spa and wellness destination offering massage, facials, body rituals, and coastal self-care experiences in San Diego."
-    />
+    <title>SPA X OB | Spa + Wellness in Ocean Beach, San Diego</title>
+    <meta name="description" content="SPA X OB is a modern coastal spa and wellness destination in Ocean Beach, San Diego. Massage, facials, body rituals, and radiance treatments in a bright, design-forward space." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -15,26 +15,18 @@
       <header class="topbar">
         <div class="container topbar__inner">
           <a class="brand" href="#top">
-            <span class="brand__title">SPA X <span>OB</span></span>
+            <span class="brand__title">SPA X <span class="brand__ob">OB</span></span>
             <span class="brand__subtitle">Spa + Wellness</span>
           </a>
 
-          <button
-            type="button"
-            class="menu-toggle"
-            aria-expanded="false"
-            aria-controls="site-navigation"
-            aria-label="Toggle navigation menu"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
+          <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-navigation" aria-label="Toggle navigation menu">
+            <span></span><span></span><span></span>
           </button>
 
           <nav class="nav" id="site-navigation">
             <a href="#about">About</a>
             <a href="#services">Services</a>
-            <a href="#experience">Experience</a>
+            <a href="#gallery">Gallery</a>
             <a href="#pricing">Pricing</a>
             <a href="#visit">Visit</a>
             <a href="#contact">Contact</a>
@@ -44,10 +36,11 @@
       </header>
 
       <main id="top">
-        <section class="hero hero--photo">
-          <div class="container hero__grid hero__grid--single">
+        <!-- HERO -->
+        <section class="hero">
+          <div class="container hero__grid--single">
             <div class="hero-photo-card">
-              <img src="assets/hero-facial-room.jpg" alt="SPA X OB facial treatment room and therapist" class="hero-photo-card__image" />
+              <img src="assets/hero-facial-room.jpg" alt="SPA X OB facial treatment in progress" class="hero-photo-card__image" loading="eager" />
               <div class="hero-photo-card__overlay"></div>
               <div class="hero-photo-card__content">
                 <span class="eyebrow">Ocean Beach, California</span>
@@ -57,17 +50,18 @@
                 </p>
                 <div class="hero__actions">
                   <a class="button button--primary" href="#contact">Book your treatment</a>
-                  <a class="button button--ghost hero-button--light" href="#services">Explore services</a>
+                  <a class="button button--light" href="#services">Explore services</a>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
+        <!-- ABOUT -->
         <section class="section section--soft" id="about">
-          <div class="container split-grid split-grid--photo">
-            <div>
-              <span class="eyebrow eyebrow--dark">About SPA X OB</span>
+          <div class="container split-grid">
+            <div class="about-text">
+              <span class="eyebrow eyebrow--pink">About SPA X OB</span>
               <h2>Your time. Your ocean.</h2>
               <p>
                 SPA X OB blends elevated care with the warmth, brightness, and ease of Ocean Beach. The experience feels beautiful but approachable — a spa built around real restoration, good energy, and thoughtful human care.
@@ -76,33 +70,39 @@
                 From facials and body rituals to massage and glow-forward wellness treatments, everything is designed to help you relax, radiate, and leave feeling lighter than when you walked in.
               </p>
             </div>
-            <div class="feature-photo-card">
-              <img src="assets/about-consultation.jpg" alt="SPA X OB consultation area and branded interior" class="feature-photo-card__image" />
+            <div class="about-photos">
+              <img src="assets/interior-lobby.jpg" alt="SPA X OB interior lobby" class="about-photos__img about-photos__img--top" loading="lazy" />
+              <img src="assets/storefront.jpg" alt="SPA X OB storefront in Ocean Beach" class="about-photos__img about-photos__img--bottom" loading="lazy" />
             </div>
           </div>
         </section>
 
+        <!-- SERVICES -->
         <section class="section" id="services">
           <div class="container">
-            <span class="eyebrow eyebrow--dark">Services</span>
+            <span class="eyebrow eyebrow--pink">Services</span>
             <h2>Mind + body care with ocean-inspired energy.</h2>
             <div class="cards">
               <article class="card">
+                <div class="card__icon">💆</div>
                 <h3>Massage Therapy</h3>
                 <p>Relaxation, recovery, and tension-relief treatments designed to reset the body and calm the nervous system.</p>
               </article>
               <article class="card">
+                <div class="card__icon">✨</div>
                 <h3>Custom Facials</h3>
                 <p>Hydrating, brightening, and glow-supportive skincare tailored to what your skin needs most right now.</p>
               </article>
               <article class="card">
+                <div class="card__icon">🌊</div>
                 <h3>Body Rituals</h3>
-                <p>Full-body exfoliating and renewing treatments that leave you feeling softened, radiant, and lighter in your body.</p>
+                <p>Full-body exfoliating and renewing treatments that leave you feeling softened, radiant, and lighter.</p>
               </article>
             </div>
           </div>
         </section>
 
+        <!-- EXPERIENCE BANNER -->
         <section class="section section--accent" id="experience">
           <div class="container split-grid split-grid--center">
             <div>
@@ -118,27 +118,35 @@
           </div>
         </section>
 
-        <section class="section gallery-section" id="gallery">
+        <!-- GALLERY -->
+        <section class="section section--soft" id="gallery">
           <div class="container">
-            <span class="eyebrow eyebrow--dark">Inside SPA X OB</span>
+            <span class="eyebrow eyebrow--pink">Inside SPA X OB</span>
             <h2>A real look at the space, the care, and the feeling.</h2>
             <div class="gallery-grid">
-              <article class="gallery-card gallery-card--wide">
-                <img src="assets/gallery-ocean-mugs.jpg" alt="Guests relaxing with SPA X OB mugs near the ocean" class="gallery-card__image" />
-              </article>
-              <article class="gallery-card">
-                <img src="assets/gallery-welcome-desk.jpg" alt="SPA X OB welcome desk and guest check-in" class="gallery-card__image" />
-              </article>
-              <article class="gallery-card">
-                <img src="assets/about-consultation.jpg" alt="SPA X OB treatment consultation and product space" class="gallery-card__image" />
-              </article>
+              <div class="gallery-card gallery-card--tall">
+                <img src="assets/gallery-ocean-mugs.jpg" alt="Guests enjoying SPA X OB branded mugs by the ocean" loading="lazy" />
+              </div>
+              <div class="gallery-card">
+                <img src="assets/treatment-room.jpg" alt="SPA X OB treatment room" loading="lazy" />
+              </div>
+              <div class="gallery-card">
+                <img src="assets/gallery-welcome-desk.jpg" alt="SPA X OB welcome desk" loading="lazy" />
+              </div>
+              <div class="gallery-card">
+                <img src="assets/about-consultation.jpg" alt="SPA X OB consultation and products" loading="lazy" />
+              </div>
+              <div class="gallery-card">
+                <img src="assets/spa-detail.jpg" alt="SPA X OB spa detail" loading="lazy" />
+              </div>
             </div>
           </div>
         </section>
 
+        <!-- PRICING -->
         <section class="section" id="pricing">
           <div class="container">
-            <span class="eyebrow eyebrow--dark">Pricing</span>
+            <span class="eyebrow eyebrow--pink">Pricing</span>
             <h2>Simple starting points for your next reset.</h2>
             <div class="pricing-grid">
               <article class="price-card">
@@ -164,16 +172,17 @@
           </div>
         </section>
 
+        <!-- VISIT -->
         <section class="section section--soft" id="visit">
           <div class="container visit-grid">
             <div class="visit-card">
-              <span class="eyebrow eyebrow--dark">Visit</span>
+              <span class="eyebrow eyebrow--pink">Visit</span>
               <h2>Ocean Beach, San Diego.</h2>
               <p>Coastal self-care with a bright, welcoming neighborhood feel.</p>
               <p>By appointment.</p>
             </div>
             <div class="visit-card">
-              <span class="eyebrow eyebrow--dark">Hours</span>
+              <span class="eyebrow eyebrow--pink">Hours</span>
               <h2>Designed around your reset.</h2>
               <ul class="hours-list">
                 <li><span>Monday – Thursday</span><span>10 AM – 7 PM</span></li>
@@ -184,14 +193,13 @@
           </div>
         </section>
 
+        <!-- CONTACT -->
         <section class="section" id="contact">
           <div class="container cta-panel">
             <div>
-              <span class="eyebrow eyebrow--dark">Contact</span>
+              <span class="eyebrow eyebrow--pink">Contact</span>
               <h2>Ready to relax, renew, and Ocean Beach?</h2>
-              <p>
-                Reach out to schedule an appointment, ask about treatments, or plan your first visit to SPA X OB.
-              </p>
+              <p>Reach out to schedule an appointment, ask about treatments, or plan your first visit to SPA X OB.</p>
             </div>
             <div class="contact-card">
               <a class="button button--primary button--wide" href="mailto:brit@spaxob.com?subject=SPA%20X%20OB%20Booking%20Inquiry">brit@spaxob.com</a>
@@ -201,34 +209,30 @@
           </div>
         </section>
       </main>
+
+      <!-- FOOTER -->
+      <footer class="site-footer">
+        <div class="container site-footer__inner">
+          <p>&copy; 2025 SPA X OB. All rights reserved.</p>
+          <p class="site-footer__credit">Built by <a href="https://xcalitoy.com" target="_blank" rel="noreferrer">Calitoy</a></p>
+        </div>
+      </footer>
     </div>
 
     <script>
       (() => {
         const toggle = document.querySelector('.menu-toggle');
         const nav = document.getElementById('site-navigation');
-        const navLinks = nav ? nav.querySelectorAll('a') : [];
-
         if (!toggle || !nav) return;
-
-        const closeMenu = () => {
-          toggle.setAttribute('aria-expanded', 'false');
-          nav.classList.remove('nav--open');
-        };
-
+        const links = nav.querySelectorAll('a');
+        const close = () => { toggle.setAttribute('aria-expanded','false'); nav.classList.remove('nav--open'); };
         toggle.addEventListener('click', () => {
-          const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-          toggle.setAttribute('aria-expanded', String(!isOpen));
-          nav.classList.toggle('nav--open', !isOpen);
+          const open = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!open));
+          nav.classList.toggle('nav--open', !open);
         });
-
-        navLinks.forEach((link) => {
-          link.addEventListener('click', closeMenu);
-        });
-
-        window.addEventListener('resize', () => {
-          if (window.innerWidth > 900) closeMenu();
-        });
+        links.forEach(l => l.addEventListener('click', close));
+        window.addEventListener('resize', () => { if (innerWidth > 900) close(); });
       })();
     </script>
   </body>
