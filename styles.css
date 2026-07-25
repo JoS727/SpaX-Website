@@ -168,6 +168,32 @@ img { max-width: 100%; display: block; }
   font-size: 1.35rem; color: var(--coast); margin-bottom: 0.75rem;
 }
 
+/* ─── FULL SERVICES MENU ─── */
+.service-menu {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem; margin-top: 2.5rem;
+}
+.service-menu__group {
+  padding: 1.8rem; border: 1px solid var(--border); border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.62);
+}
+.service-menu__label {
+  color: var(--pink) !important; font-size: 0.72rem !important; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+}
+.service-menu__group h3 {
+  color: var(--coast); font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.45rem; margin: 0.45rem 0 1rem;
+}
+.service-menu__group ul { list-style: none; padding: 0; }
+.service-menu__group li {
+  align-items: baseline; border-top: 1px solid var(--border); display: flex;
+  gap: 1rem; justify-content: space-between; padding: 0.72rem 0;
+}
+.service-menu__group li span { color: var(--coast); font-size: 0.94rem; font-weight: 600; }
+.service-menu__group li small { color: var(--muted); font-size: 0.78rem; text-align: right; }
+.services-note { margin: 1.5rem auto 0; max-width: 750px; text-align: center; }
+
 /* ─── PRICING ─── */
 .price-card__label {
   margin-bottom: 0.75rem; text-transform: uppercase;
@@ -228,7 +254,7 @@ img { max-width: 100%; display: block; }
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
-  .split-grid, .cta-panel, .cards, .pricing-grid, .visit-grid, .gallery-grid {
+  .split-grid, .cta-panel, .cards, .pricing-grid, .service-menu, .visit-grid, .gallery-grid {
     grid-template-columns: 1fr;
   }
   .topbar__inner { flex-wrap: wrap; }
