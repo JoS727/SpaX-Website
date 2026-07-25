@@ -1,0 +1,16 @@
+const groups=[
+['Lasers',[['Arms',100],['Legs',80],['Bikini',100],['Brazilian',90],['Back',100],['Bikini Balls*',100],['Tummy',100],['Upper Lip',20],['Chin',30],['Stomach',80],['Tatas',40],['Hair Line',45],['Ears',30],['Patches (2×2)',20]]],
+['Brows',[['Women’s Brows',20],['Women’s Brow Lamination',70],['Tint',20]]],
+['Massage',[['1 Hr Full Body Massage',100],['80 Min Full Body Massage',120],['Head Add-On',30],['Shoulders Add-On',45],['Feet Add-On',45],['Arms Add-On',45],['Back Add-On',45],['Legs Add-On',45],['House Call (per hour)',200]]],
+['Nails',[['Dip',100],['Mani',30],['Men’s Mani',25],['Pedis',20],['Gel Add-On',10],['Art Add-On',5],['Extra Long Add-On',15],['Gems Add-On',10],['French Tip Add-On',10]]],
+['Men’s Cuts',[['Regular Cut',40],['Cut + 10-Min Massage',60],['Cut + Beard',70],['Facial Add-On*',35],['Line Up',15],['Neck Clean Up',15]]],
+['Women’s Hair',[['Trim',30],['Cut',50],['Style',30],['Cut + Style',70],['Color',100],['Highlight w/ Partial',120],['Highlight Full',90]]]
+];
+const cart=new Map(),root=document.querySelector('#service-groups'),items=document.querySelector('#selected-items'),total=document.querySelector('#total'),money=n=>`$${n.toLocaleString()}`;
+root.innerHTML=groups.map(([name,services])=>`<section class="order-group"><h2>${name}</h2><div class="order-options">${services.map(([label,price],i)=>`<label class="order-option"><input type="checkbox" data-name="${label}" data-price="${price}"><span>${label}</span><b>${money(price)}</b></label>`).join('')}</div></section>`).join('');
+function render(){let sum=0,rows=[];cart.forEach((entry,name)=>{sum+=entry.price*entry.qty;rows.push(`<div class="selected-item"><span>${name}${entry.qty>1?` × ${entry.qty}`:''}</span><div><button type="button" data-minus="${name}" aria-label="Remove one ${name}">−</button><b>${money(entry.price*entry.qty)}</b><button type="button" data-plus="${name}" aria-label="Add one ${name}">+</button></div></div>`)});items.innerHTML=rows.length?rows.join(''):'<p class="empty">Nothing selected yet.</p>';total.textContent=money(sum)}
+root.addEventListener('change',e=>{const x=e.target;if(!x.matches('input'))return;const name=x.dataset.name,price=Number(x.dataset.price);if(x.checked)cart.set(name,{price,qty:1});else cart.delete(name);render()});
+items.addEventListener('click',e=>{const name=e.target.dataset.plus||e.target.dataset.minus;if(!name)return;const entry=cart.get(name);entry.qty+=e.target.dataset.plus?1:-1;if(entry.qty<1){cart.delete(name);document.querySelector(`input[data-name="${CSS.escape(name)}"]`).checked=false}render()});
+document.querySelector('#clear-order').onclick=()=>{cart.clear();document.querySelectorAll('input').forEach(x=>x.checked=false);render()};
+document.querySelector('#copy-order').onclick=async()=>{if(!cart.size)return;let sum=0,text='SPA X OB selection:\n';cart.forEach((x,n)=>{sum+=x.price*x.qty;text+=`- ${n}${x.qty>1?` × ${x.qty}`:''}: ${money(x.price*x.qty)}\n`});text+=`Estimated total: ${money(sum)}`;try{await navigator.clipboard.writeText(text);document.querySelector('#copy-status').textContent='Selection copied — paste it when you call.'}catch{document.querySelector('#copy-status').textContent='Please select and copy your choices manually.'}};
+render();
